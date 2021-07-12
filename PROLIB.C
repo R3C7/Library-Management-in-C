@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
+#include<stdlib.h>
+
 #define NO_OF_BOOKS 2
 
 int i=0,book_no=0;
@@ -25,9 +27,9 @@ void edit_book();
 
 //********************** main function *************************//
 
-void main()
+int main()
 {
-	clrscr();
+	system("cls");
 	printf("\n1.  Add a new book\n");
 	printf("\n2.  Search a book\n");
 	printf("\n3.  Exit\n");
@@ -54,7 +56,7 @@ void add_book()
 {
 	if (book_no<=NO_OF_BOOKS)
 	{
-	    clrscr();
+	    system("cls");
 		printf("\nEnter the id of the book:\n");
 		scanf("%d",&book[book_no].id);
 		printf("\nEnter the title of the book: (enter underscore instead of space)\n");
@@ -69,7 +71,7 @@ void add_book()
 			book[book_no].flag=0;
 		else
 			book[book_no].flag=1;
-		clrscr();
+		system("cls");
 		printf("\nID : %d\n",book[book_no].id);
 		printf("\nTitle : %s\n",book[book_no].title);
 		printf("\nAuthor : %s\n",book[book_no].author);
@@ -91,7 +93,7 @@ void add_book()
 	}
 	else
 	{
-		clrscr();
+		system("cls");
 		printf("\n\nMax number of books reached....");
 	}
 }
@@ -100,7 +102,7 @@ void add_book()
 
 void search_book()
 {
-	clrscr();
+	system("cls");
 	printf("\n1.  Search by title\n");
 	printf("\n2.  Search by category\n");
 	printf("\n3.  Search by ID\n");
@@ -124,7 +126,7 @@ void search_book()
 void search_by_title()
 {
 	char title[50];
-	clrscr();
+	system("cls");
 	printf("\nEnter the Title of the book:\n");
 	scanf("%s",title);
 	for (i=0; i<NO_OF_BOOKS; i++)
@@ -158,7 +160,7 @@ void search_by_title()
 void search_by_cat()
 {
 	char cate[50];
-	clrscr();
+	system("cls");
 	printf("\nEnter the category:\n");
 	scanf("%s",&cate);
 	for(i=0;i<NO_OF_BOOKS;i++)
@@ -192,7 +194,7 @@ void search_by_cat()
 void search_by_id()
 {
 	int ID;
-	clrscr();
+	system("cls");
 	printf("\nEnter the ID of the book:\n");
 	scanf("%d",&ID);
 	for(i=0;i<NO_OF_BOOKS;i++)
@@ -226,7 +228,7 @@ void search_by_id()
 void edit_book()
 {
 	int ce;
-	clrscr();
+	system("cls");
 	printf("\n1.  Change the Id\n");
 	printf("\n2.  Edit the title\n");
 	printf("\n3.  Change the name of author\n");
@@ -234,7 +236,7 @@ void edit_book()
 	printf("\n5.  Change the availablity of book\n");
 	printf("\n\n\nEnter your choice: ");
 	scanf("%d",&ce);
-	clrscr();
+	system("cls");
 	switch (ce)
 	{
 		case 1: printf("\nEnter the new ID for the book:\n");
@@ -262,7 +264,7 @@ void edit_book()
 				 getch();
 				 edit_book();
 	}
-	clrscr();
+	system("cls");
 	printf("\nID : %d\n",book[book_no].id);
 	printf("\nTitle : %s\n",book[book_no].title);
 	printf("\nAuthor : %s\n",book[book_no].author);
